@@ -1,0 +1,261 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* === EASY COLOR CUSTOMIZATION === */
+    /* Change these main colors to customize the entire theme */
+    --color-primary: 86 33% 95%; /* f1faee - Light mint */
+    --color-secondary: 219 31.9% 21.1%; /* 1d3557 - Dark navy */
+    --color-accent: 210 41% 50%; /* 457b9d - Medium blue */
+    --color-neutral: 185 17% 69%; /* a8dadc - Light blue-gray */
+
+    /* === THEME COLORS (Auto-generated from above) === */
+    --background: var(--color-secondary);
+    --foreground: var(--color-primary);
+
+    --card: 210 25% 16%;
+    --card-foreground: var(--color-primary);
+
+    --popover: 210 25% 16%;
+    --popover-foreground: var(--color-primary);
+
+    /* Primary Color (f1faee) */
+    --primary: var(--color-primary);
+    --primary-foreground: var(--color-secondary);
+
+    --secondary: 210 25% 20%;
+    --secondary-foreground: var(--color-primary);
+
+    --muted: 210 20% 25%;
+    --muted-foreground: var(--color-neutral);
+
+    --accent: var(--color-accent);
+    --accent-foreground: var(--color-primary);
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: var(--color-primary);
+
+    --border: 210 20% 30%;
+    --input: 210 20% 25%;
+    --ring: var(--color-primary);
+
+    /* Custom Portfolio Colors */
+    --hero-gradient-start: var(--color-primary);
+    --hero-gradient-end: var(--color-accent);
+    --glow: var(--color-primary);
+    --surface: 210 25% 18%;
+    --surface-light: 210 20% 22%;
+
+    --radius: 0.75rem;
+  }
+
+  /* Light mode fallback (portfolio will be dark by default) */
+  .light {
+    --background: 0 0% 98%;
+    --foreground: 220 26% 8%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 26% 8%;
+    --primary: 174 84% 41%;
+    --primary-foreground: 0 0% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Hero Button Variant */
+  .btn-hero {
+    @apply bg-gradient-to-r from-primary to-accent text-primary-foreground px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary/25;
+  }
+
+  /* Glow Effect */
+  .glow-effect {
+    @apply relative;
+  }
+
+  .glow-effect::before {
+    content: "";
+    @apply absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-lg blur-xl opacity-0 transition-opacity duration-300;
+  }
+
+  .glow-effect:hover::before {
+    @apply opacity-100;
+  }
+
+  /* Card Hover Effect */
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary/10;
+  }
+
+  /* Gradient Text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+
+  /* Surface Variants */
+  .surface {
+    @apply bg-surface border border-border;
+  }
+
+  .surface-light {
+    @apply bg-surface-light border border-border;
+  }
+}
+
+@layer utilities {
+  /* Animation Utilities */
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.8s ease-out;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.8s ease-out;
+  }
+
+  .animate-spin-slow {
+    animation: spin 20s linear infinite;
+  }
+
+  .animate-bounce-slow {
+    animation: bounce 4s infinite;
+  }
+
+  .animate-float-delayed {
+    animation: float 4s ease-in-out infinite;
+    animation-delay: 2s;
+  }
+
+  .animate-drift {
+    animation: drift 15s ease-in-out infinite;
+  }
+
+  .animate-particle {
+    animation: particle 8s ease-in-out infinite;
+  }
+
+  .animate-glow-pulse {
+    animation: glowPulse 3s ease-in-out infinite;
+  }
+}
+
+/* Custom Animations */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes drift {
+  0% {
+    transform: translateX(0px) translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateX(30px) translateY(-30px) rotate(120deg);
+  }
+  66% {
+    transform: translateX(-20px) translateY(20px) rotate(240deg);
+  }
+  100% {
+    transform: translateX(0px) translateY(0px) rotate(360deg);
+  }
+}
+
+@keyframes particle {
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px) scale(1);
+    opacity: 0.7;
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px) scale(1.1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-40px) translateX(-5px) scale(0.9);
+    opacity: 0.8;
+  }
+  75% {
+    transform: translateY(-20px) translateX(-10px) scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+@keyframes glowPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+    filter: brightness(1);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(var(--primary) / 0.6),
+      0 0 60px hsl(var(--accent) / 0.3);
+    filter: brightness(1.2);
+  }
+}
