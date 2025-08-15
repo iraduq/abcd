@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Download, Github, Linkedin, Mail } from "lucide-react";
 import profilePhoto from "@/assets/370563684_122115324650007671_3831738859299853245_n.jpg";
+import { Parallax } from "react-scroll-parallax";
 
 const HeroSection = () => {
   return (

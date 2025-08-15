@@ -1,44 +1,33 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
-import dashboardImg from "@/assets/project-dashboard.jpg";
-import ecommerceImg from "@/assets/project-ecommerce.jpg";
+import dashboardImg from "@/assets/roof.png";
+import ecommerceImg from "@/assets/sala.png";
 import mobileImg from "@/assets/project-mobile.jpg";
 
 const ProjectsSection = () => {
   const projects = [
     {
       id: 1,
-      title: "Analytics Dashboard",
+      title: "Companie de acoperișuri",
       description:
-        "A comprehensive analytics platform built with React and D3.js, featuring real-time data visualization and interactive charts.",
+        "Un website multi-platformă care listează și promovează servicii în mai multe orașe, cu funcționalități interactive, design responsive și actualizări în timp real pentru utilizatori.",
       image: dashboardImg,
-      tags: ["React", "TypeScript", "D3.js", "Node.js"],
-      liveUrl: "#",
+      tags: ["React", "TypeScript"],
+      liveUrl: "https://roofgermany.netlify.app/",
       githubUrl: "#",
       featured: true,
     },
     {
       id: 2,
-      title: "E-Commerce Platform",
+      title: "Sala de fitness",
       description:
-        "Modern e-commerce solution with advanced filtering, secure payments, and admin dashboard for inventory management.",
+        "Un website pentru o sală de fitness care oferă informații despre abonamente, clase și antrenori, cu funcționalități interactive și design responsive pentru toate dispozitivele.",
       image: ecommerceImg,
-      tags: ["Next.js", "Stripe", "PostgreSQL", "Tailwind"],
-      liveUrl: "#",
+      tags: ["React", "TypeScript"],
+      liveUrl: "https://fitclubproject.netlify.app/",
       githubUrl: "#",
       featured: true,
-    },
-    {
-      id: 3,
-      title: "Mobile Task Manager",
-      description:
-        "Cross-platform mobile app for task management with offline sync, push notifications, and team collaboration features.",
-      image: mobileImg,
-      tags: ["React Native", "Firebase", "Redux", "Node.js"],
-      liveUrl: "#",
-      githubUrl: "#",
-      featured: false,
     },
   ];
 
@@ -74,9 +63,16 @@ const ProjectsSection = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="absolute bottom-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <Button size="sm" variant="secondary">
-                      <ExternalLink className="h-4 w-4" />
-                    </Button>
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button size="sm" variant="secondary">
+                        <ExternalLink className="h-4 w-4" />
+                      </Button>
+                    </a>
+
                     <Button size="sm" variant="secondary">
                       <Github className="h-4 w-4" />
                     </Button>

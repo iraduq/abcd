@@ -72,10 +72,16 @@ const CVSection = () => {
             O prezentare completă a parcursului meu profesional, a competențelor
             și realizărilor mele.
           </p>
-          <Button className="btn-hero">
-            <Download className="mr-2 h-4 w-4" />
-            Download PDF CV
-          </Button>
+          <a href="/Radu_CV.pdf" target="_blank" rel="noopener noreferrer">
+            <Button
+              variant="outline"
+              size="lg"
+              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+            >
+              <Download className="mr-2 h-4 w-4" />
+              Vezi CV
+            </Button>
+          </a>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
