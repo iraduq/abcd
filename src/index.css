@@ -14,30 +14,30 @@ All colors MUST be HSL.
     --color-accent: 200 70% 55%; /* albastru vibrant */
     --color-neutral: 180 50% 75%; /* albastru-gri mai luminos */
 
-    /* === THEME COLORS (Auto-generated from above) === */
+    /* === THEME COLORS (Foreground alb) === */
     --background: var(--color-secondary);
-    --foreground: var(--color-primary);
+    --foreground: 0 0% 100%; /* alb */
 
     --card: 220 45% 20%;
-    --card-foreground: var(--color-primary);
+    --card-foreground: 0 0% 100%; /* alb */
 
     --popover: 220 45% 20%;
-    --popover-foreground: var(--color-primary);
+    --popover-foreground: 0 0% 100%; /* alb */
 
     --primary: var(--color-primary);
-    --primary-foreground: var(--color-secondary);
+    --primary-foreground: 0 0% 100%; /* alb */
 
     --secondary: 220 45% 25%;
-    --secondary-foreground: var(--color-primary);
+    --secondary-foreground: 0 0% 100%; /* alb */
 
     --muted: 220 40% 30%;
-    --muted-foreground: var(--color-neutral);
+    --muted-foreground: 0 0% 100%; /* alb */
 
     --accent: var(--color-accent);
-    --accent-foreground: var(--color-primary);
+    --accent-foreground: 0 0% 100%; /* alb */
 
     --destructive: 0 85% 60%;
-    --destructive-foreground: var(--color-primary);
+    --destructive-foreground: 0 0% 100%; /* alb */
 
     --border: 220 40% 35%;
     --input: 220 40% 30%;
@@ -55,11 +55,11 @@ All colors MUST be HSL.
 
   .light {
     --background: 0 0% 98%;
-    --foreground: 220 30% 10%;
+    --foreground: 0 0% 100%; /* alb */
     --card: 0 0% 100%;
-    --card-foreground: 220 30% 10%;
+    --card-foreground: 0 0% 100%; /* alb */
     --primary: 160 80% 45%;
-    --primary-foreground: 0 0% 98%;
+    --primary-foreground: 0 0% 100%; /* alb */
   }
 }
 
@@ -80,7 +80,7 @@ All colors MUST be HSL.
 @layer components {
   /* Hero Button Variant */
   .btn-hero {
-    @apply bg-gradient-to-r from-primary to-accent text-primary-foreground px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary/25;
+    @apply bg-gradient-to-r from-blue-500 to-purple-500 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/25;
   }
 
   /* Glow Effect */

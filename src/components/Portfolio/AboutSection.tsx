@@ -86,7 +86,7 @@ const AboutSection = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <skill.icon className="h-8 w-8 text-primary" />
+                <skill.icon className="h-8 w-8 text-white-500" />
               </div>
               <h3 className="font-semibold mb-2">{skill.title}</h3>
               <p className="text-sm text-muted-foreground">
@@ -124,25 +124,25 @@ const AboutSection = () => {
             <h3 className="text-3xl font-bold">Date esențiale</h3>
             <div className="grid grid-cols-2 gap-4">
               <div className="p-4 surface-light rounded-lg">
-                <div className="text-2xl font-bold text-primary">50+</div>
+                <div className="text-2xl font-bold text-white-500">50+</div>
                 <div className="text-sm text-muted-foreground">
                   Proiecte completate
                 </div>
               </div>
               <div className="p-4 surface-light rounded-lg">
-                <div className="text-2xl font-bold text-primary">2+</div>
+                <div className="text-2xl font-bold text-white-500">2+</div>
                 <div className="text-sm text-muted-foreground">
                   Ani de experienta
                 </div>
               </div>
               <div className="p-4 surface-light rounded-lg">
-                <div className="text-2xl font-bold text-primary">10+</div>
+                <div className="text-2xl font-bold text-white-500">10+</div>
                 <div className="text-sm text-muted-foreground">
                   Clienti fericiti
                 </div>
               </div>
               <div className="p-4 surface-light rounded-lg">
-                <div className="text-2xl font-bold text-primary">∞</div>
+                <div className="text-2xl font-bold text-white-500">∞</div>
                 <div className="text-sm text-muted-foreground">Cafele</div>
               </div>
             </div>

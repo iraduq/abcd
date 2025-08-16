@@ -9,7 +9,7 @@ const JourneySection = () => {
       period: "2019-2023",
       description:
         "Am început să explorez informatica în liceu, iar pasiunea pentru tehnologie m-a condus către dezvoltarea web. Am construit primele proiecte și am descoperit bucuria de a crea experiențe digitale.",
-      color: "from-blue-500 to-cyan-500",
+      color: "from-blue-500 to-white-500",
     },
     {
       icon: Briefcase,
@@ -17,7 +17,7 @@ const JourneySection = () => {
       period: "2024-2025",
       description:
         "Am lucrat la un proiect de echipă, ghidat de specialiștii de la Assist Software, dezvoltând aplicații web și câștigând experiență valoroasă în colaborare și tehnologii moderne.",
-      color: "from-primary to-accent",
+      color: "from-blue-500 to-white-500",
     },
     {
       icon: GraduationCap,
@@ -25,7 +25,7 @@ const JourneySection = () => {
       period: "2023-2027",
       description:
         "Studiez la domeniul Calculatoare, Universitatea „Ștefan cel Mare” din Suceava, și mă concentrez pe dezvoltarea full-stack, transformând idei de afaceri în produse digitale folosind tehnologii moderne.",
-      color: "from-green-500 to-teal-500",
+      color: "from-blue-500 to-white-500",
     },
   ];
 
@@ -63,7 +63,7 @@ const JourneySection = () => {
                     className={`w-24 h-24 mx-auto rounded-full bg-gradient-to-br ${milestone.color} p-0.5`}
                   >
                     <div className="w-full h-full rounded-full bg-background flex items-center justify-center">
-                      <milestone.icon className="h-10 w-10 text-primary" />
+                      <milestone.icon className="h-10 w-10 color-white-500" />
                     </div>
                   </div>
 
@@ -74,7 +74,7 @@ const JourneySection = () => {
                 </div>
 
                 <div className="space-y-4">
-                  <div className="text-sm text-primary font-semibold">
+                  <div className="text-sm color-white-500 font-semibold">
                     {milestone.period}
                   </div>
                   <h3 className="text-2xl font-bold">{milestone.title}</h3>

@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Download, Github, Linkedin, Mail } from "lucide-react";
 import profilePhoto from "@/assets/370563684_122115324650007671_3831738859299853245_n.jpg";
 import { Parallax } from "react-scroll-parallax";
+import { Typewriter } from "react-simple-typewriter";
 
 const HeroSection = () => {
   return (
@@ -41,8 +42,19 @@ const HeroSection = () => {
               <h2 className="text-2xl text-muted-foreground">
                 Salut! Sunt Radu
               </h2>
+
               <h1 className="text-6xl lg:text-7xl font-bold leading-tight">
-                <span className="gradient-text">Full Stack</span>
+                <span className="gradient-text">
+                  <Typewriter
+                    words={["Full Stack", "Frontend", "Backend"]}
+                    loop={0} // 0 = infinit
+                    cursor
+                    cursorStyle="|"
+                    typeSpeed={120}
+                    deleteSpeed={80}
+                    delaySpeed={2000} // cât stă pe text înainte să înceapă ștergerea
+                  />
+                </span>
                 <br />
                 Developer
                 <br />

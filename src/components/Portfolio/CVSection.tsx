@@ -89,7 +89,7 @@ const CVSection = () => {
           <div className="lg:col-span-2 space-y-8">
             <div>
               <h3 className="text-3xl font-bold mb-8 flex items-center gap-3">
-                <Building className="h-8 w-8 text-primary" />
+                <Building className="h-8 w-8 color-white-500" />
                 Experiență
               </h3>
               <div className="space-y-6">
@@ -98,7 +98,7 @@ const CVSection = () => {
                     <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                       <div>
                         <h4 className="text-xl font-bold">{exp.position}</h4>
-                        <div className="text-primary font-semibold">
+                        <div className="color-white-500 font-semibold">
                           {exp.company}
                         </div>
                       </div>
@@ -119,7 +119,7 @@ const CVSection = () => {
                           key={i}
                           className="flex items-start gap-3 text-muted-foreground"
                         >
-                          <Award className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
+                          <Award className="h-4 w-4 color-white-500 mt-1 flex-shrink-0" />
                           {achievement}
                         </li>
                       ))}
@@ -132,7 +132,7 @@ const CVSection = () => {
             {/* Education */}
             <div>
               <h3 className="text-3xl font-bold mb-8 flex items-center gap-3">
-                <Award className="h-8 w-8 text-primary" />
+                <Award className="h-8 w-8 color-white-500" />
                 Educatie
               </h3>
               <div className="space-y-4">
@@ -141,7 +141,7 @@ const CVSection = () => {
                     <div className="flex flex-col md:flex-row md:items-start md:justify-between">
                       <div>
                         <h4 className="text-lg font-bold">{edu.degree}</h4>
-                        <div className="text-primary font-semibold">
+                        <div className="color-white-500 font-semibold">
                           {edu.institution}
                         </div>
                         <p className="text-muted-foreground text-sm mt-2">
@@ -170,14 +170,14 @@ const CVSection = () => {
               <div className="space-y-6">
                 {Object.entries(skills).map(([category, skillList]) => (
                   <div key={category}>
-                    <h4 className="font-semibold text-primary mb-3">
+                    <h4 className="font-semibold color-white-500 mb-3">
                       {category}
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {skillList.map((skill) => (
                         <span
                           key={skill}
-                          className="px-3 py-1 text-xs bg-primary/20 text-primary rounded-full"
+                          className="px-3 py-1 text-xs bg-primary/20 color-white-500 rounded-full"
                         >
                           {skill}
                         </span>
