@@ -13,58 +13,72 @@ interface SymbolItem {
   color: string; // culoarea simbolului
 }
 
+interface MorphShape {
+  id: number;
+  x: number;
+  y: number;
+  size: number;
+  rotation: number;
+  color: string;
+  type: 'circle' | 'square' | 'triangle' | 'hexagon';
+}
+
 const AnimatedBackground: React.FC = () => {
   const [symbols, setSymbols] = useState<SymbolItem[]>([]);
+  const [morphShapes, setMorphShapes] = useState<MorphShape[]>([]);
 
   useEffect(() => {
     const syms: SymbolItem[] = [];
+    const shapes: MorphShape[] = [];
+    
     // Detectare dispozitiv mobil
     const isMobile = window.innerWidth < 768 || "ontouchstart" in window;
-    const total = isMobile ? 10 : 40; // mult mai puține pe mobil
+    const total = isMobile ? 10 : 40;
+    const totalShapes = isMobile ? 5 : 15;
+    
     const chars = [
-      "★",
-      "✦",
-      "✧",
-      "✩",
-      "☼",
-      "❂",
-      "✪",
-      "◆",
-      "◇",
-      "○",
-      "●",
-      "◉",
-      "✨",
+      "★", "✦", "✧", "✩", "☼", "❂", "✪", "◆", "◇", "○", "●", "◉", "✨",
+      "⚡", "🌟", "💫", "✴️", "🔮", "💎", "🌙", "☄️", "🎆", "🎇"
     ];
+    
     const colors = [
-      "#ffffff",
-      "#fef3c7",
-      "#ddd6fe",
-      "#fce7f3",
-      "#d1fae5",
-      "#bfdbfe",
-      "#fed7d7",
-      "#f0f9ff",
-      "#ecfdf5",
-      "#fef7cd",
+      "hsl(var(--primary))", "hsl(var(--accent))", "hsl(var(--glow))",
+      "hsl(160 70% 85%)", "hsl(200 80% 70%)", "hsl(280 60% 75%)",
+      "hsl(45 90% 80%)", "hsl(320 50% 85%)", "hsl(180 60% 80%)"
     ];
 
+    // Generare simboluri
     for (let i = 0; i < total; i++) {
       syms.push({
         id: i,
         left: Math.random() * 100,
         top: Math.random() * 140,
-        size: Math.random() * (isMobile ? 20 : 28) + (isMobile ? 6 : 8), // mai mici pe mobil
-        duration: Math.random() * (isMobile ? 20 : 25) + (isMobile ? 12 : 15), // mai rapide pe mobil
+        size: Math.random() * (isMobile ? 20 : 32) + (isMobile ? 8 : 12),
+        duration: Math.random() * (isMobile ? 20 : 30) + (isMobile ? 15 : 20),
         char: chars[Math.floor(Math.random() * chars.length)],
-        opacity: Math.random() * 0.6 + 0.3,
-        drift: (Math.random() - 0.5) * (isMobile ? 20 : 30), // mai puțin drift pe mobil
-        blur: Math.random() * (isMobile ? 1 : 2), // mai puțin blur pe mobil
+        opacity: Math.random() * 0.7 + 0.4,
+        drift: (Math.random() - 0.5) * (isMobile ? 25 : 40),
+        blur: Math.random() * (isMobile ? 1.5 : 3),
         color: colors[Math.floor(Math.random() * colors.length)],
       });
     }
 
+    // Generare forme morfice
+    for (let i = 0; i < totalShapes; i++) {
+      const shapeTypes: MorphShape['type'][] = ['circle', 'square', 'triangle', 'hexagon'];
+      shapes.push({
+        id: i,
+        x: Math.random() * 100,
+        y: Math.random() * 100,
+        size: Math.random() * 80 + 40,
+        rotation: Math.random() * 360,
+        color: colors[Math.floor(Math.random() * colors.length)],
+        type: shapeTypes[Math.floor(Math.random() * shapeTypes.length)]
+      });
+    }
+
     setSymbols(syms);
+    setMorphShapes(shapes);
   }, []);
 
   return (
@@ -114,6 +128,75 @@ const AnimatedBackground: React.FC = () => {
             }
           }
 
+          @keyframes morphShape {
+            0% { 
+              transform: rotate(0deg) scale(1); 
+              border-radius: 50%; 
+              opacity: 0.3;
+            }
+            25% { 
+              transform: rotate(90deg) scale(1.2); 
+              border-radius: 0%; 
+              opacity: 0.6;
+            }
+            50% { 
+              transform: rotate(180deg) scale(0.8); 
+              border-radius: 30%; 
+              opacity: 0.8;
+            }
+            75% { 
+              transform: rotate(270deg) scale(1.1); 
+              border-radius: 10%; 
+              opacity: 0.5;
+            }
+            100% { 
+              transform: rotate(360deg) scale(1); 
+              border-radius: 50%; 
+              opacity: 0.3;
+            }
+          }
+
+          @keyframes energyWave {
+            0% { 
+              transform: scale(0) rotate(0deg); 
+              opacity: 1;
+              filter: blur(0px);
+            }
+            50% { 
+              transform: scale(2) rotate(180deg); 
+              opacity: 0.5;
+              filter: blur(2px);
+            }
+            100% { 
+              transform: scale(4) rotate(360deg); 
+              opacity: 0;
+              filter: blur(5px);
+            }
+          }
+
+          @keyframes particleTrail {
+            0% { 
+              transform: translateY(100vh) translateX(0) scale(0); 
+              opacity: 0;
+              box-shadow: 0 0 0px currentColor;
+            }
+            10% { 
+              opacity: 1; 
+              transform: translateY(80vh) translateX(10px) scale(1);
+              box-shadow: 0 0 20px currentColor;
+            }
+            90% { 
+              opacity: 0.8; 
+              transform: translateY(-10vh) translateX(-10px) scale(0.5);
+              box-shadow: 0 0 30px currentColor;
+            }
+            100% { 
+              transform: translateY(-20vh) translateX(0) scale(0); 
+              opacity: 0;
+              box-shadow: 0 0 0px currentColor;
+            }
+          }
+
           .animate-float {
             animation-name: float;
             animation-timing-function: cubic-bezier(0.4, 0, 0.6, 1);
@@ -124,6 +207,19 @@ const AnimatedBackground: React.FC = () => {
           .sparkle-effect {
             animation: sparkle 3s ease-in-out infinite;
             text-shadow: 0 0 3px currentColor, 0 0 6px currentColor;
+          }
+
+          .morph-shape {
+            animation: morphShape 15s ease-in-out infinite;
+            filter: blur(1px);
+          }
+
+          .energy-wave {
+            animation: energyWave 8s ease-out infinite;
+          }
+
+          .particle-trail {
+            animation: particleTrail linear infinite;
           }
 
           /* Optimizări pentru mobil */
@@ -180,7 +276,57 @@ const AnimatedBackground: React.FC = () => {
           </span>
         ))}
 
-        {/* Particule extra subtile în fundal - mai puține pe mobil */}
+        {/* Forme morfice */}
+        {morphShapes.map((shape) => (
+          <div
+            key={`morph-${shape.id}`}
+            className="absolute morph-shape"
+            style={{
+              left: `${shape.x}%`,
+              top: `${shape.y}%`,
+              width: `${shape.size}px`,
+              height: `${shape.size}px`,
+              backgroundColor: shape.color,
+              opacity: 0.15,
+              animationDelay: `${shape.id * 2}s`,
+              animationDuration: `${15 + shape.id * 3}s`,
+            }}
+          />
+        ))}
+
+        {/* Unde de energie */}
+        {Array.from({ length: window.innerWidth < 768 ? 3 : 8 }).map((_, i) => (
+          <div
+            key={`energy-${i}`}
+            className="absolute energy-wave rounded-full border-2 border-primary"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              width: "20px",
+              height: "20px",
+              animationDelay: `${i * 2}s`,
+              animationDuration: `${8 + i}s`,
+            }}
+          />
+        ))}
+
+        {/* Particule cu urme */}
+        {Array.from({ length: window.innerWidth < 768 ? 5 : 12 }).map((_, i) => (
+          <div
+            key={`trail-${i}`}
+            className="absolute particle-trail rounded-full"
+            style={{
+              left: `${Math.random() * 100}%`,
+              width: `${Math.random() * 6 + 3}px`,
+              height: `${Math.random() * 6 + 3}px`,
+              backgroundColor: `hsl(${Math.random() * 60 + 160} 70% 70%)`,
+              animationDuration: `${Math.random() * 15 + 10}s`,
+              animationDelay: `${-Math.random() * 15}s`,
+            }}
+          />
+        ))}
+
+        {/* Particule extra subtile în fundal */}
         {Array.from({ length: window.innerWidth < 768 ? 8 : 20 }).map(
           (_, i) => (
             <div
