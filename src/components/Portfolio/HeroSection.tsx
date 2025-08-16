@@ -6,25 +6,39 @@ import { Parallax } from "react-scroll-parallax";
 const HeroSection = () => {
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Enhanced Background Effects */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse-slow"></div>
-      <div
-        className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-pulse-slow"
-        style={{ animationDelay: "1s" }}
-      ></div>
+      {/* Background Blobs cu Parallax */}
+      <Parallax translateY={[-40, 40]} speed={-5}>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
+      </Parallax>
 
-      {/* Floating particles */}
-      <div className="absolute top-20 left-20 w-3 h-3 bg-primary/40 rounded-full animate-particle"></div>
-      <div className="absolute bottom-40 right-40 w-2 h-2 bg-accent/50 rounded-full animate-drift"></div>
-      <div className="absolute top-1/3 left-1/3 w-4 h-4 bg-neutral/30 rounded-full animate-bounce-slow"></div>
-      <div className="absolute bottom-1/3 right-1/3 w-2.5 h-2.5 bg-primary/60 rounded-full animate-float"></div>
+      <Parallax translateY={[30, -30]} speed={10}>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent/10 rounded-full blur-3xl"></div>
+      </Parallax>
 
+      {/* Particule cu Parallax */}
+      <Parallax translateY={[-20, 20]} translateX={[-10, 10]} speed={5}>
+        <div className="absolute top-20 left-20 w-3 h-3 bg-primary/40 rounded-full"></div>
+      </Parallax>
+
+      <Parallax translateY={[15, -15]} speed={3}>
+        <div className="absolute bottom-40 right-40 w-2 h-2 bg-accent/50 rounded-full"></div>
+      </Parallax>
+
+      <Parallax translateY={[-25, 25]} translateX={[10, -10]} speed={4}>
+        <div className="absolute top-1/3 left-1/3 w-4 h-4 bg-neutral/30 rounded-full"></div>
+      </Parallax>
+
+      <Parallax translateY={[20, -20]} speed={6}>
+        <div className="absolute bottom-1/3 right-1/3 w-2.5 h-2.5 bg-primary/60 rounded-full"></div>
+      </Parallax>
+
+      {/* Content */}
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-8 animate-fade-in-up">
             <div className="space-y-4">
-              <h2 className="text-2xl text-muted-foreground animate-slide-in-left">
+              <h2 className="text-2xl text-muted-foreground">
                 Salut! Sunt Radu
               </h2>
               <h1 className="text-6xl lg:text-7xl font-bold leading-tight">
@@ -108,25 +122,29 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Right Content - Profile Image */}
-          <div className="flex justify-center lg:justify-end animate-slide-in-right">
-            <div className="relative">
-              <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden glow-effect">
-                <img
-                  src={profilePhoto}
-                  alt="Alex Chen - Full Stack Developer"
-                  className="w-full h-full object-cover"
-                />
-              </div>
+          {/* Right Content - Profile Image cu Parallax */}
+          <Parallax translateY={[-20, 20]} scale={[0.9, 1.1]} speed={5}>
+            <div className="flex justify-center lg:justify-end">
+              <div className="relative">
+                <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden glow-effect">
+                  <img
+                    src={profilePhoto}
+                    alt="Radu - Full Stack Developer"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
 
-              {/* Floating Elements */}
-              <div className="absolute -top-6 -right-6 w-24 h-24 bg-primary/20 rounded-full animate-float"></div>
-              <div
-                className="absolute -bottom-6 -left-6 w-16 h-16 bg-accent/30 rounded-full animate-float"
-                style={{ animationDelay: "1.5s" }}
-              ></div>
+                {/* Floating Elements */}
+                <Parallax translateY={[-15, 15]} speed={4}>
+                  <div className="absolute -top-6 -right-6 w-24 h-24 bg-primary/20 rounded-full"></div>
+                </Parallax>
+
+                <Parallax translateY={[15, -15]} speed={6}>
+                  <div className="absolute -bottom-6 -left-6 w-16 h-16 bg-accent/30 rounded-full"></div>
+                </Parallax>
+              </div>
             </div>
-          </div>
+          </Parallax>
         </div>
       </div>
 

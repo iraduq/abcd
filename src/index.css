@@ -9,59 +9,56 @@ All colors MUST be HSL.
 @layer base {
   :root {
     /* === EASY COLOR CUSTOMIZATION === */
-    /* Change these main colors to customize the entire theme */
-    --color-primary: 86 33% 95%; /* f1faee - Light mint */
-    --color-secondary: 219 31.9% 21.1%; /* 1d3557 - Dark navy */
-    --color-accent: 210 41% 50%; /* 457b9d - Medium blue */
-    --color-neutral: 185 17% 69%; /* a8dadc - Light blue-gray */
+    --color-primary: 160 60% 80%; /* mai viu mint */
+    --color-secondary: 220 50% 25%; /* navy mai intens */
+    --color-accent: 200 70% 55%; /* albastru vibrant */
+    --color-neutral: 180 50% 75%; /* albastru-gri mai luminos */
 
     /* === THEME COLORS (Auto-generated from above) === */
     --background: var(--color-secondary);
     --foreground: var(--color-primary);
 
-    --card: 210 25% 16%;
+    --card: 220 45% 20%;
     --card-foreground: var(--color-primary);
 
-    --popover: 210 25% 16%;
+    --popover: 220 45% 20%;
     --popover-foreground: var(--color-primary);
 
-    /* Primary Color (f1faee) */
     --primary: var(--color-primary);
     --primary-foreground: var(--color-secondary);
 
-    --secondary: 210 25% 20%;
+    --secondary: 220 45% 25%;
     --secondary-foreground: var(--color-primary);
 
-    --muted: 210 20% 25%;
+    --muted: 220 40% 30%;
     --muted-foreground: var(--color-neutral);
 
     --accent: var(--color-accent);
     --accent-foreground: var(--color-primary);
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 85% 60%;
     --destructive-foreground: var(--color-primary);
 
-    --border: 210 20% 30%;
-    --input: 210 20% 25%;
+    --border: 220 40% 35%;
+    --input: 220 40% 30%;
     --ring: var(--color-primary);
 
     /* Custom Portfolio Colors */
     --hero-gradient-start: var(--color-primary);
     --hero-gradient-end: var(--color-accent);
     --glow: var(--color-primary);
-    --surface: 210 25% 18%;
-    --surface-light: 210 20% 22%;
+    --surface: 220 45% 23%;
+    --surface-light: 220 40% 28%;
 
     --radius: 0.75rem;
   }
 
-  /* Light mode fallback (portfolio will be dark by default) */
   .light {
     --background: 0 0% 98%;
-    --foreground: 220 26% 8%;
+    --foreground: 220 30% 10%;
     --card: 0 0% 100%;
-    --card-foreground: 220 26% 8%;
-    --primary: 174 84% 41%;
+    --card-foreground: 220 30% 10%;
+    --primary: 160 80% 45%;
     --primary-foreground: 0 0% 98%;
   }
 }

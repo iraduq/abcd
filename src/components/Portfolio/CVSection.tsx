@@ -5,52 +5,52 @@ import { Download, MapPin, Calendar, Building, Award } from "lucide-react";
 const CVSection = () => {
   const experience = [
     {
-      position: "Frontend Developer",
-      period: "2024",
-      location: "Remote",
-      achievements: [
-        "Led development of 3 major web applications serving 10k+ users",
-        "Improved application performance by 40% through optimization",
-        "Mentored junior developers and established coding standards",
-      ],
-    },
-    {
-      company: "InnovateLab",
       position: "Full Stack Developer",
-      period: "2020 - 2022",
+      period: "2023-2024",
       location: "Remote",
       achievements: [
-        "Built e-commerce platform generating $2M+ in revenue",
-        "Developed RESTful APIs supporting mobile and web applications",
-        "Collaborated with design team to implement pixel-perfect UIs",
+        "Am condus dezvoltarea a unei aplicații web majore pentru platforma online de șah",
+        "Am îmbunătățit performanța aplicației cu 40% prin optimizare și refactorizare a codului",
+        "Am oferit mentorat colegilor de echipa și am stabilit standarde de codare",
       ],
     },
     {
-      company: "StartupXYZ",
-      position: "Frontend Developer",
-      period: "2019 - 2020",
-      location: "Suceava",
+      company: "Freelance",
+      position: "Dezvoltator Full Stack",
+      period: "2024 - 2025",
+      location: "Remote",
       achievements: [
-        "Created responsive web applications using React and TypeScript",
-        "Implemented real-time features using WebSocket connections",
-        "Reduced bug reports by 60% through comprehensive testing",
+        "Am creat aplicații web și mobile pentru startup-uri și antreprenori",
+        "Am dezvoltat soluții personalizate pentru nevoi specifice ale clienților",
+        "Am implementat interfețe moderne și funcționale, optimizate pentru performanță",
       ],
     },
   ];
 
   const education = [
     {
-      institution: "Stanford University",
-      degree: "Master of Science in Computer Science",
-      period: "2017 - 2019",
-      details:
-        "Specialized in Software Engineering and Human-Computer Interaction",
+      institution: "Dual USV",
+      degree: "",
+      period: "2023 - 2025",
+      details: "Colegiul Tehnic 'Samuil Isopescu' - Assist Software",
     },
     {
-      institution: "UC Berkeley",
-      degree: "Bachelor of Science in Computer Science",
-      period: "2013 - 2017",
-      details: "Magna Cum Laude, Dean's List for 6 semesters",
+      institution: "Universitatea 'Ștefan cel Mare' din Suceava",
+      degree: "Calculatoare",
+      period: "2023 - 2027",
+      details: "",
+    },
+    {
+      institution: "Universitatea 'Ștefan cel Mare' din Suceava",
+      degree: "Formare psihopedagogică",
+      period: "2024 - 2026",
+      details: "",
+    },
+    {
+      institution: "Liceul Tehnologic Bucecea",
+      degree: "Matematică-Informatică",
+      period: "2019 - 2023",
+      details: "",
     },
   ];
 
@@ -133,7 +133,7 @@ const CVSection = () => {
             <div>
               <h3 className="text-3xl font-bold mb-8 flex items-center gap-3">
                 <Award className="h-8 w-8 text-primary" />
-                Education
+                Educatie
               </h3>
               <div className="space-y-4">
                 {education.map((edu, index) => (
@@ -189,28 +189,13 @@ const CVSection = () => {
             </Card>
 
             <Card className="p-6 surface">
-              <h3 className="text-2xl font-bold mb-4">Certifications</h3>
+              <h3 className="text-2xl font-bold mb-4">Certificari</h3>
               <div className="space-y-4">
                 <div className="border-l-2 border-primary pl-4">
-                  <div className="font-semibold">
-                    AWS Certified Solutions Architect
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    Amazon Web Services
-                  </div>
+                  <div className="font-semibold">Cambridge - FCE</div>
                 </div>
-                <div className="border-l-2 border-primary pl-4">
-                  <div className="font-semibold">Google Cloud Professional</div>
-                  <div className="text-sm text-muted-foreground">
-                    Google Cloud Platform
-                  </div>
-                </div>
-                <div className="border-l-2 border-primary pl-4">
-                  <div className="font-semibold">
-                    React Developer Certification
-                  </div>
-                  <div className="text-sm text-muted-foreground">Meta</div>
-                </div>
+                <div className="border-l-2 border-primary pl-4"></div>
+                <div className="border-l-2 border-primary pl-4"></div>
               </div>
             </Card>
           </div>

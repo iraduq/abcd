@@ -1,5 +1,15 @@
 import { Card } from "@/components/ui/card";
-import { Code, Palette, Rocket, Users } from "lucide-react";
+import {
+  Code,
+  Palette,
+  Rocket,
+  Users,
+  Star,
+  Coffee,
+  Heart,
+  Zap,
+} from "lucide-react";
+import { Parallax } from "react-scroll-parallax";
 
 const AboutSection = () => {
   const skills = [
@@ -26,8 +36,35 @@ const AboutSection = () => {
     },
   ];
 
+  const floatingIcons = [
+    { Icon: Star, position: "top-10 left-10", delay: 0 },
+    { Icon: Coffee, position: "top-20 right-20", delay: 1 },
+    { Icon: Heart, position: "bottom-20 left-20", delay: 2 },
+    { Icon: Zap, position: "bottom-10 right-10", delay: 3 },
+    { Icon: Code, position: "top-1/3 left-16", delay: 1.5 },
+    { Icon: Rocket, position: "bottom-1/3 right-16", delay: 2.5 },
+  ];
+
   return (
-    <section id="about" className="py-20 relative">
+    <section id="about" className="py-20 relative overflow-hidden">
+      {/* Floating Icons */}
+      {floatingIcons.map(({ Icon, position, delay }, index) => (
+        <Parallax
+          key={index}
+          translateY={[-20, 20]}
+          translateX={[-10, 10]}
+          speed={3 + delay}
+          rotate={[0, 360]}
+        >
+          <div
+            className={`absolute ${position} opacity-10 animate-pulse`}
+            style={{ animationDelay: `${delay}s` }}
+          >
+            <Icon className="w-8 h-8 text-primary/30" />
+          </div>
+        </Parallax>
+      ))}
+
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-5xl font-bold mb-6">
