@@ -8,47 +8,45 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* === EASY COLOR CUSTOMIZATION === */
-    --color-primary: 160 60% 80%; /* mai viu mint */
-    --color-secondary: 220 50% 25%; /* navy mai intens */
-    --color-accent: 200 70% 55%; /* albastru vibrant */
-    --color-neutral: 180 50% 75%; /* albastru-gri mai luminos */
+    /* === PROFESSIONAL COLOR PALETTE === */
+    --color-primary: 200 70% 70%; /* Sky blue */
+    --color-secondary: 220 30% 15%; /* Deep navy */
+    --color-accent: 180 60% 65%; /* Teal */
+    --color-neutral: 210 20% 60%; /* Cool gray */
 
-    /* === THEME COLORS (Foreground alb) === */
+    /* === SEMANTIC COLORS === */
     --background: var(--color-secondary);
-    --foreground: 0 0% 100%; /* alb */
+    --foreground: 210 20% 98%; /* Off-white */
 
-    --card: 220 45% 20%;
-    --card-foreground: 0 0% 100%; /* alb */
+    --card: 220 30% 18%;
+    --card-foreground: 210 20% 98%;
 
-    --popover: 220 45% 20%;
-    --popover-foreground: 0 0% 100%; /* alb */
+    --popover: 220 30% 18%;
+    --popover-foreground: 210 20% 98%;
 
     --primary: var(--color-primary);
-    --primary-foreground: 0 0% 100%; /* alb */
+    --primary-foreground: 220 30% 15%;
 
-    --secondary: 220 45% 25%;
-    --secondary-foreground: 0 0% 100%; /* alb */
+    --secondary: 220 30% 20%;
+    --secondary-foreground: 210 20% 98%;
 
-    --muted: 220 40% 30%;
-    --muted-foreground: 0 0% 100%; /* alb */
+    --muted: 220 25% 25%;
+    --muted-foreground: 210 15% 70%;
 
     --accent: var(--color-accent);
-    --accent-foreground: 0 0% 100%; /* alb */
+    --accent-foreground: 220 30% 15%;
 
-    --destructive: 0 85% 60%;
-    --destructive-foreground: 0 0% 100%; /* alb */
+    --destructive: 0 70% 60%;
+    --destructive-foreground: 210 20% 98%;
 
-    --border: 220 40% 35%;
-    --input: 220 40% 30%;
+    --border: 220 25% 30%;
+    --input: 220 25% 25%;
     --ring: var(--color-primary);
 
-    /* Custom Portfolio Colors */
-    --hero-gradient-start: var(--color-primary);
-    --hero-gradient-end: var(--color-accent);
+    /* Professional Portfolio Colors */
+    --surface: 220 30% 17%;
+    --surface-light: 220 25% 22%;
     --glow: var(--color-primary);
-    --surface: 220 45% 23%;
-    --surface-light: 220 40% 28%;
 
     --radius: 0.75rem;
   }
@@ -78,42 +76,47 @@ All colors MUST be HSL.
 }
 
 @layer components {
-  /* Hero Button Variant */
+  /* Professional Button Variants */
   .btn-hero {
-    @apply bg-gradient-to-r from-blue-500 to-purple-500 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/25;
+    @apply bg-gradient-to-r from-primary to-accent text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-primary/20;
   }
 
-  /* Glow Effect */
+  /* Subtle Glow Effect */
   .glow-effect {
     @apply relative;
   }
 
   .glow-effect::before {
     content: "";
-    @apply absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-lg blur-xl opacity-0 transition-opacity duration-300;
+    @apply absolute inset-0 bg-gradient-to-r from-primary/10 to-accent/10 rounded-lg blur-xl opacity-0 transition-opacity duration-500;
   }
 
   .glow-effect:hover::before {
     @apply opacity-100;
   }
 
-  /* Card Hover Effect */
+  /* Professional Card Hover */
   .card-hover {
-    @apply transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary/10;
+    @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-primary/5;
   }
 
-  /* Gradient Text */
+  /* Refined Gradient Text */
   .gradient-text {
-    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent;
   }
 
   /* Surface Variants */
   .surface {
-    @apply bg-surface border border-border;
+    @apply bg-surface border border-border/50;
   }
 
   .surface-light {
-    @apply bg-surface-light border border-border;
+    @apply bg-surface-light border border-border/30;
+  }
+
+  /* Professional Container */
+  .section-container {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
   }
 }
 
