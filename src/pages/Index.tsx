@@ -7,7 +7,7 @@ import CVSection from "@/components/Portfolio/CVSection";
 import PricingSection from "@/components/Portfolio/PricingSection";
 import ContactSection from "@/components/Portfolio/ContactSection";
 import AnimatedBackground from "@/components/Portfolio/AnimatedBackground";
-
+// Index
 const Index = () => {
   return (
     <div className="min-h-screen bg-background relative">
