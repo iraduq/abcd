@@ -51,14 +51,7 @@ All colors MUST be HSL.
     --radius: 0.75rem;
   }
 
-  .light {
-    --background: 0 0% 98%;
-    --foreground: 0 0% 100%; /* alb */
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 100%; /* alb */
-    --primary: 160 80% 45%;
-    --primary-foreground: 0 0% 100%; /* alb */
-  }
+  /* Light mode disabled - consistent dark theme for all users */
 }
 
 @layer base {
