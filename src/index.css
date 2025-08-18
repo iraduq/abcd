@@ -7,7 +7,9 @@ All colors MUST be HSL.
 */
 
 @layer base {
-  :root {
+  :root,
+  html[class*="light"],
+  html[class*="dark"] {
     /* === PROFESSIONAL COLOR PALETTE === */
     --color-primary: 200 70% 70%; /* Sky blue */
     --color-secondary: 220 30% 15%; /* Deep navy */
