@@ -53,7 +53,41 @@ All colors MUST be HSL.
     --radius: 0.75rem;
   }
 
-  /* Light mode disabled - consistent dark theme for all users */
+  .dark {
+    /* Dark mode with lighter colors to match light mode appearance */
+    --background: 210 25% 25%; /* Much lighter than before */
+    --foreground: 210 15% 95%; /* Slightly off-white */
+    
+    --card: 210 20% 30%;
+    --card-foreground: 210 15% 95%;
+    
+    --popover: 210 20% 30%;
+    --popover-foreground: 210 15% 95%;
+    
+    --primary: 200 70% 70%; /* Keep primary bright */
+    --primary-foreground: 210 25% 15%;
+    
+    --secondary: 210 20% 35%; /* Lighter secondary */
+    --secondary-foreground: 210 15% 95%;
+    
+    --muted: 210 20% 40%; /* Much lighter muted */
+    --muted-foreground: 210 15% 75%;
+    
+    --accent: 180 60% 65%; /* Keep accent bright */
+    --accent-foreground: 210 25% 15%;
+    
+    --destructive: 0 70% 60%;
+    --destructive-foreground: 210 15% 95%;
+    
+    --border: 210 20% 45%; /* Much lighter borders */
+    --input: 210 20% 40%;
+    --ring: var(--color-primary);
+    
+    /* Lighter surface colors */
+    --surface: 210 20% 32%;
+    --surface-light: 210 15% 38%;
+    --glow: var(--color-primary);
+  }
 }
 
 @layer base {
