@@ -31,6 +31,13 @@ const Header = () => {
                 key={item.label}
                 href={item.href}
                 className="text-foreground/80 hover:text-primary transition-colors duration-200 text-sm font-medium"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const element = document.querySelector(item.href);
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
+                }}
               >
                 {item.label}
               </a>
@@ -55,11 +62,18 @@ const Header = () => {
           <div className="md:hidden pb-4">
             <nav className="flex flex-col space-y-3">
               {navItems.map((item) => (
-                <a
+                  <a
                   key={item.label}
                   href={item.href}
                   className="text-foreground/80 hover:text-primary transition-colors duration-200 text-sm font-medium py-2"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setIsMenuOpen(false);
+                    const element = document.querySelector(item.href);
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                  }}
                 >
                   {item.label}
                 </a>
