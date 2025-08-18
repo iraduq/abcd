@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark light" />
     <title>Radu I. | Soluții Web Profesionale</title>
 
     <link
@@ -22,6 +23,19 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
+    <script>
+      (function () {
+        const el = document.documentElement;
+        const media = window.matchMedia('(prefers-color-scheme: dark)');
+        const apply = () => {
+          if (media.matches) el.classList.add('dark');
+          else el.classList.remove('dark');
+        };
+        apply();
+        if (media.addEventListener) media.addEventListener('change', apply);
+        else if (media.addListener) media.addListener(apply);
+      })();
+    </script>
   </head>
 
   <body>
